@@ -1,0 +1,18 @@
+{
+  "name": "graphql.wtf-envelop-response-cache",
+  "private": true,
+  "scripts": {
+    "dev": "ts-node-dev server.ts",
+    "start": "ts-node server.ts"
+  },
+  "devDependencies": {
+    "ts-node": "10.7.0",
+    "ts-node-dev": "1.1.8",
+    "typescript": "4.6.2"
+  },
+  "dependencies": {
+    "@envelop/response-cache": "^2.1.0",
+    "@graphql-yoga/node": "0.1.0-beta.4",
+    "graphql": "16.3.0"
+  }
+}
