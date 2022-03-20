@@ -1,5 +1,4 @@
-import { createServer } from "@graphql-yoga/node";
-import { useResponseCache } from "@envelop/response-cache";
+import { createServer, GraphQLYogaError } from "@graphql-yoga/node";
 
 type User = {
   id: string;
@@ -48,7 +47,7 @@ const server = createServer({
           const user = users.find((user) => user.id === id);
 
           if (!user) {
-            throw new Error("User not found");
+            throw new GraphQLYogaError("User not found");
           }
 
           user.name = name;
@@ -57,11 +56,6 @@ const server = createServer({
       },
     },
   },
-  plugins: [
-    useResponseCache({
-      includeExtensionMetadata: true,
-    }),
-  ],
 });
 
 server.start();
